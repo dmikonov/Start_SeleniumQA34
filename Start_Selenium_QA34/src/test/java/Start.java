@@ -52,7 +52,7 @@ public class Start {
         WebElement emailTextBox = wd.findElement(By.cssSelector("[placeholder='Email']"));
         emailTextBox.click();
         emailTextBox.clear();
-        emailTextBox.sendKeys("d020797@yahoo.com");
+        emailTextBox.sendKeys("d020797@yjjj0ho.com");
 
         WebElement passwordTextBox = wd.findElement(By.cssSelector("[placeholder='Password']"));
         passwordTextBox.click();
@@ -61,5 +61,7 @@ public class Start {
 
         WebElement registrationButton = wd.findElement(By.cssSelector("div.login_login__3EHKB :last-child"));
         registrationButton.click();
+
+        wd.quit();
     }
 }
