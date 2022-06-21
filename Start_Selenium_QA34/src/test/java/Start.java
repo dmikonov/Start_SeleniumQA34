@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 public class Start {
 
     WebDriver wd;
@@ -45,23 +47,25 @@ public class Start {
     @Test
     public void HomeworkRegistration(){
         wd = new ChromeDriver();
-        wd.get("https://contacts-app.tobbymarshall815.vercel.app/home");
+        wd.get("https://contacts-app.tobbymarshall815.vercel.app/");
         WebElement loginTab = wd.findElement(By.cssSelector("[href='/login']"));
         loginTab.click();
 
         WebElement emailTextBox = wd.findElement(By.cssSelector("[placeholder='Email']"));
         emailTextBox.click();
         emailTextBox.clear();
-        emailTextBox.sendKeys("d020797@yjjj0ho.com");
+        emailTextBox.sendKeys("d020797@yj0ho.com");
 
         WebElement passwordTextBox = wd.findElement(By.cssSelector("[placeholder='Password']"));
         passwordTextBox.click();
         passwordTextBox.clear();
         passwordTextBox.sendKeys("Ww12345$");
 
-        WebElement registrationButton = wd.findElement(By.cssSelector("div.login_login__3EHKB :last-child"));
+        //WebElement registrationButton = wd.findElement(By.cssSelector("div.login_login__3EHKB :last-child"));
+       // WebElement registrationButton = wd.findElement(By.cssSelector("button:last-child"));
+        List<WebElement> list = wd.findElements(By.cssSelector("button"));
+        WebElement registrationButton = list.get(1);
         registrationButton.click();
 
-        wd.quit();
     }
 }
